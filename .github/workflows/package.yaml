@@ -2,6 +2,7 @@ name: package
 
 # This workflow will run whenever a tag is pushed to the repository that matches the v#.#.# pattern (where # is one or more digits
 on:
+  workflow_dispatch:
   push:
     tags:
     - "v[0-9]+.[0-9]+.[0-9]+"
