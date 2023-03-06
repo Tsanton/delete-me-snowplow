@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/Tsanton/delete-me-snowplow/compare/v0.1.1...v0.1.2) (2023-03-06)
+
+
+### Bug Fixes
+
+* pat release to trigger ([34d5830](https://github.com/Tsanton/delete-me-snowplow/commit/34d583073bce15a9be46fa974468b116138d2af0))
+
 ## [0.1.1](https://github.com/Tsanton/delete-me-snowplow/compare/v0.1.0...v0.1.1) (2023-03-06)
 
 
