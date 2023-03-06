@@ -2,9 +2,8 @@ name: release
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
+  pull_request:
+    types: ["opened", "synchronize"]  
 
 jobs:
   release-please:
@@ -20,4 +19,5 @@ jobs:
         with:
           include-v-in-tag: true
           command: manifest
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT }}
+          
