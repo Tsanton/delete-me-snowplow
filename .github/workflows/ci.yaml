@@ -1,0 +1,28 @@
+name: ci
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  ci:
+    name: pr-testing
+    uses: tsanton/github-action-templates/.github/workflows/python-github-package-ci.yaml@dct-v0.1.0
+    permissions:
+      issues: read
+      contents: read
+      checks: write
+      pull-requests: write
+    secrets: inherit
+    with:
+      compose_file_path: ./
+      compose_file_name: docker-compose.yaml
+      run_test: true
+      test_service_name: snowplow
+      env_vars: |
+        SNOWFLAKE_ROLE=ACCOUNTADMIN
+        SNOWFLAKE_WH=COMPUTE_WH
