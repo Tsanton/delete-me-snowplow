@@ -2,7 +2,12 @@
 
 ## **CI-setup**
 
-Beware that GitHub does not permit one workflow to trigger another, as per [this](). \
+Beware that GitHub does not permit one workflow to trigger another, as per [this](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow):
+
+```txt
+When you use the repository's GITHUB_TOKEN to perform tasks, events triggered by the GITHUB_TOKEN, with the exception of workflow_dispatch and repository_dispatch, will not create a new workflow run. This prevents you from accidentally creating recursive workflow runs.
+```
+
 To mediate this the [release.yaml](./workflows/release.yaml) is run of the permissions configured for a [personal access token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). \
 The time to live (TTL) of these are 12 months -> should it stop working the PAT must be renewed.
 
