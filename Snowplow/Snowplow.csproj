@@ -4,7 +4,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <PackageId>NuGet.Workflow</PackageId>
+        <PackageId>Snowflake.Snowplow</PackageId>
       <RepositoryType>git</RepositoryType>
       <RepositoryUrl>https://github.com/tsanton/delete-me-snowplow</RepositoryUrl>
     </PropertyGroup>

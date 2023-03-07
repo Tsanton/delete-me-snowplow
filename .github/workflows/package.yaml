@@ -6,6 +6,10 @@ on:
     tags:
     - "[0-9]+.[0-9]+.[0-9]+"
 
+env:
+  GITHUB_ORG_NAME: tsanton
+  PACKAGE_NAME: Snowflake.Snowplow
+  
 jobs:
   package:
     runs-on: ubuntu-latest
@@ -29,6 +33,6 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
     - name: Push
-      run: dotnet nuget push Snowflake.Snowplow.${VERSION}.nupkg --source https://nuget.pkg.github.com/tsanton/index.json --api-key ${GITHUB_TOKEN}
+      run: dotnet nuget push ${PACKAGE_NAME}.${VERSION}.nupkg --source https://nuget.pkg.github.com/${GITHUB_ORG_NAME}/index.json --api-key ${GITHUB_TOKEN}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
