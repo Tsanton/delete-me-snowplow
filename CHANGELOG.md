@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.3...0.1.4) (2023-03-07)
+
+
+### Bug Fixes
+
+* ci test nuget url copy pasta error ([39d3b50](https://github.com/Tsanton/delete-me-snowplow/commit/39d3b50bf9efc8b1d53724ce46079c45f1cc868d))
+
 ## [0.1.3](https://github.com/Tsanton/delete-me-snowplow/compare/v0.1.2...0.1.3) (2023-03-07)
 
 
