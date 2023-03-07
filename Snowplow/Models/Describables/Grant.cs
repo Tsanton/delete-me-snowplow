@@ -38,7 +38,7 @@ def show_grants_to_role_py(snowpark_session, principal_type_py:str, principal_id
         res.append(row.as_dict())
     return res
 $$
-call show_grants_to_role('{principalType}', {principalIdentifier}');";
+call show_grants_to_role('{principalType}', '{principalIdentifier}');";
                 return query;
     }
 }
