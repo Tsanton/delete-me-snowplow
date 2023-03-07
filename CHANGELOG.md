@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.5...0.1.6) (2023-03-07)
+
+
+### Bug Fixes
+
+* explisit contents.read permission ([4887d94](https://github.com/Tsanton/delete-me-snowplow/commit/4887d940a2878917e76a7318f99ded57feec1a7b))
+
 ## [0.1.5](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.4...0.1.5) (2023-03-07)
 
 
