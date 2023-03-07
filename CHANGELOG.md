@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.6...0.1.7) (2023-03-07)
+
+
+### Bug Fixes
+
+* ci cleanup trigger ([df2a975](https://github.com/Tsanton/delete-me-snowplow/commit/df2a97550b9e3b6722c1e23e23d026e6172cad86))
+
 ## [0.1.6](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.5...0.1.6) (2023-03-07)
 
 
