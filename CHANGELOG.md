@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.9](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.8...0.1.9) (2023-03-07)
+
+
+### Bug Fixes
+
+* copy pasta missing quote symbol ([005c82b](https://github.com/Tsanton/delete-me-snowplow/commit/005c82b5b7973507f5e24d9faa22771133bdf640))
+
 ## [0.1.8](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.7...0.1.8) (2023-03-07)
 
 
