@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.4...0.1.5) (2023-03-07)
+
+
+### Bug Fixes
+
+* package permission for package.yaml ([e3e01dd](https://github.com/Tsanton/delete-me-snowplow/commit/e3e01dd28dc8437bfd5c374aaff0297da00312bf))
+
 ## [0.1.4](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.3...0.1.4) (2023-03-07)
 
 
