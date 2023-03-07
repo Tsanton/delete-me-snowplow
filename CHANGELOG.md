@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.7...0.1.8) (2023-03-07)
+
+
+### Bug Fixes
+
+* cleanup docs and project setup ([5da4aeb](https://github.com/Tsanton/delete-me-snowplow/commit/5da4aeb00ad36f91a7f89a3dc10e406ce895d6ae))
+
 ## [0.1.7](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.6...0.1.7) (2023-03-07)
 
 
