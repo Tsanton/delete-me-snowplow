@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/Tsanton/delete-me-snowplow/compare/v0.1.2...0.1.3) (2023-03-07)
+
+
+### Bug Fixes
+
+* test release pipeline ([ea6625f](https://github.com/Tsanton/delete-me-snowplow/commit/ea6625fb7bb6a95f3e2ef5d445e0de90c8b04784))
+
 ## [0.1.2](https://github.com/Tsanton/delete-me-snowplow/compare/v0.1.1...v0.1.2) (2023-03-06)
 
 
