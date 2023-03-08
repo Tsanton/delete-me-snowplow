@@ -11,7 +11,7 @@ public partial class TableTests
     {
         /*Arrange*/
         var (dbAsset, schemaAsset) = await BootstrapTableAssets();
-        var col1 = new Assets.Time("TIMESTAMP_COLUMN")
+        var col1 = new Assets.Time("TIME_COLUMN")
         {
             Precision = 0,
             PrimaryKey = false,
@@ -45,8 +45,10 @@ public partial class TableTests
             Assert.NotNull(dbTable);
             Assert.Single(dbTable!.Columns);
             Assert.Equal(col1.Name, dbTable.Columns.First().Name);
+            Assert.Equal("TIME", dbTable.Columns.First().ColumnType.Type);
+            Assert.Equal(col1.Precision, dbTable.Columns.First().ColumnType.Precision!.Value);
             Assert.False(dbTable.Columns.First().PrimaryKey);
-            Assert.False(dbTable.Columns.First().Nullable);
+            Assert.False(dbTable.Columns.First().ColumnType.Nullable);
             Assert.False(dbTable.Columns.First().UniqueKey);
             Assert.Null(dbTable.Columns.First().Default);
             Assert.Null(dbTable.Columns.First().Expression);

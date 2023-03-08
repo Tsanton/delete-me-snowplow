@@ -14,6 +14,7 @@ public partial class TableTests
         var col1 = new Assets.Varchar("VARCHAR_COLUMN")
         {
             PrimaryKey = false,
+            Length = 16777216,
             Nullable = false,
             Unique = false,
             ForeignKey = null,
@@ -45,8 +46,10 @@ public partial class TableTests
             Assert.NotNull(dbTable);
             Assert.Single(dbTable!.Columns);
             Assert.Equal(col1.Name, dbTable.Columns.First().Name);
+            Assert.Equal("TEXT", dbTable.Columns.First().ColumnType.Type);
+            Assert.False(dbTable.Columns.First().ColumnType.Nullable);
+            Assert.Equal(col1.Length, dbTable.Columns.First().ColumnType.Length!.Value);
             Assert.False(dbTable.Columns.First().PrimaryKey);
-            Assert.False(dbTable.Columns.First().Nullable);
             Assert.False(dbTable.Columns.First().UniqueKey);
             Assert.Null(dbTable.Columns.First().Default);
             Assert.Null(dbTable.Columns.First().Expression);
@@ -67,6 +70,7 @@ public partial class TableTests
         var col1 = new Assets.Varchar("VARCHAR_COLUMN")
         {
             PrimaryKey = true,
+            Length = 16777216,
             Nullable = false,
             Unique = false,
             ForeignKey = null,
@@ -98,8 +102,10 @@ public partial class TableTests
             Assert.NotNull(dbTable);
             Assert.Single(dbTable!.Columns);
             Assert.Equal(col1.Name, dbTable.Columns.First().Name);
+            Assert.Equal("TEXT", dbTable.Columns.First().ColumnType.Type);
+            Assert.False(dbTable.Columns.First().ColumnType.Nullable);
+            Assert.Equal(col1.Length, dbTable.Columns.First().ColumnType.Length!.Value);
             Assert.True(dbTable.Columns.First().PrimaryKey);
-            Assert.False(dbTable.Columns.First().Nullable);
             Assert.False(dbTable.Columns.First().UniqueKey);
             Assert.Null(dbTable.Columns.First().Default);
             Assert.Null(dbTable.Columns.First().Expression);

@@ -65,6 +65,7 @@ public class Varchar: ISnowflakeColumn
         Name = name;
     }
     public string Name { get; init; }
+    public int Length { get; init; } = 16777216; //Max bytes in string 
     public bool PrimaryKey { get; init; } = false;
     public bool Nullable { get; init; } = false;
     public bool Unique { get; init; } = false;
@@ -75,7 +76,7 @@ public class Varchar: ISnowflakeColumn
     public string GetDefinition()
     {
         var sb = new StringBuilder();
-        sb.Append(Name).Append(' ').Append("VARCHAR(16777216)");
+        sb.Append(Name).Append(' ').Append("VARCHAR").Append($"({Length})");
         if (PrimaryKey) sb.Append(' ').Append($"PRIMARY KEY");
         if (Nullable == false) sb.Append(' ').Append($"NOT NULL");
         if (Unique) sb.Append(' ').Append($"UNIQUE");

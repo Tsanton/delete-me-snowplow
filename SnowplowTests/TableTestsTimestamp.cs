@@ -47,8 +47,10 @@ public partial class TableTests
             Assert.NotNull(dbTable);
             Assert.Single(dbTable!.Columns);
             Assert.Equal(col1.Name, dbTable.Columns.First().Name);
+            Assert.Equal(SnowflakeTimestamp.LocalTimeZone.GetEnumJsonAttributeValue(), dbTable.Columns.First().ColumnType.Type);
+            Assert.False(dbTable.Columns.First().ColumnType.Nullable);
+            Assert.Equal(col1.Precision, dbTable.Columns.First().ColumnType.Precision!.Value);
             Assert.False(dbTable.Columns.First().PrimaryKey);
-            Assert.False(dbTable.Columns.First().Nullable);
             Assert.False(dbTable.Columns.First().UniqueKey);
             Assert.Null(dbTable.Columns.First().Default);
             Assert.Null(dbTable.Columns.First().Expression);

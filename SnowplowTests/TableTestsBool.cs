@@ -8,7 +8,7 @@ public partial class TableTests
 {
     [Fact]
     public async Task test_table_bool()
-    {
+    { 
         /*Arrange*/
         var (dbAsset, schemaAsset) = await BootstrapTableAssets();
         var col1 = new Assets.Bool("BOOL_COLUMN")
@@ -43,9 +43,10 @@ public partial class TableTests
             /*Assert*/
             Assert.NotNull(dbTable);
             Assert.Single(dbTable!.Columns);
+            Assert.Equal("BOOLEAN", dbTable.Columns.First().ColumnType.Type);
             Assert.Equal(col1.Name, dbTable.Columns.First().Name);
             Assert.False(dbTable.Columns.First().PrimaryKey);
-            Assert.False(dbTable.Columns.First().Nullable);
+            Assert.False(dbTable.Columns.First().ColumnType.Nullable);
             Assert.False(dbTable.Columns.First().UniqueKey);
             Assert.Null(dbTable.Columns.First().Default);
             Assert.Null(dbTable.Columns.First().Expression);
@@ -96,8 +97,9 @@ public partial class TableTests
             Assert.NotNull(dbTable);
             Assert.Single(dbTable!.Columns);
             Assert.Equal(col1.Name, dbTable.Columns.First().Name);
+            Assert.Equal("BOOLEAN", dbTable.Columns.First().ColumnType.Type);
             Assert.True(dbTable.Columns.First().PrimaryKey);
-            Assert.False(dbTable.Columns.First().Nullable);
+            Assert.False(dbTable.Columns.First().ColumnType.Nullable);
             Assert.False(dbTable.Columns.First().UniqueKey);
             Assert.Null(dbTable.Columns.First().Default);
             Assert.Null(dbTable.Columns.First().Expression);

@@ -2,31 +2,6 @@ using System.Text.Json.Serialization;
 using Snowplow.Models.Enums;
 
 namespace Snowplow.Models.Entities;
-
-public class Column
-{
-    public string Name { get; set; }
-    [JsonPropertyName("type")]
-    public string ColumnType { get; set; }
-    public string? Default { get; set; }
-    public string? Check { get; set; }
-    public string? Expression { get; set; }
-    [JsonPropertyName("null?")]
-    [JsonConverter(typeof(JsonStringBoolConverter))]
-    public bool Nullable { get; set; }
-    [JsonPropertyName("primary key")]
-    [JsonConverter(typeof(JsonStringBoolConverter))]
-    public bool PrimaryKey { get; set; }
-    [JsonPropertyName("unique key")]
-    [JsonConverter(typeof(JsonStringBoolConverter))]
-    public bool UniqueKey { get; set; }
-    [JsonPropertyName("policy name")]
-    public string? PolicyName { get; set; }
-    [JsonPropertyName("auto_increment")]
-    public string? AutoIncrement { get; set; }
-    public string Comment { get; set; }
-}
-
 public class Table: ISnowflakeEntity
 {   
     [JsonPropertyName("database_name")]
