@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.10](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.9...0.1.10) (2023-03-08)
+
+
+### Features
+
+* added create table Create/Read/Delete ([b0f515b](https://github.com/Tsanton/delete-me-snowplow/commit/b0f515b9d0a21ad077667b4d123a260155a5a152))
+
+
+### Bug Fixes
+
+* ColumnType model introduced to column ([bb9a836](https://github.com/Tsanton/delete-me-snowplow/commit/bb9a836744f68d3e621a9f58baa6f4103e7f960d))
+
 ## [0.1.9](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.8...0.1.9) (2023-03-07)
 
 
