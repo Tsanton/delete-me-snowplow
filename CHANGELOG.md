@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/Tsanton/delete-me-snowplow/compare/0.2.0...0.2.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* multi column table missing comma error fixed ([c9794a1](https://github.com/Tsanton/delete-me-snowplow/commit/c9794a11989801d3a83c9b076f348fca6256564f))
+
 ## [0.2.0](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.10...0.2.0) (2023-03-09)
 
 
