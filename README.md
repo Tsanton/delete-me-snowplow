@@ -19,3 +19,4 @@ Secondly you add a `nuget.config` file adding your github organization as a sour
 
 Adding this in combination with searching for packages from either **Visual Studio** or **Rider** will prompt your for username/password regardless of the package being public.
 The reason for this is that you're accessing the GitHub organisations feed in order to access the package; this endpoint is private.
+
