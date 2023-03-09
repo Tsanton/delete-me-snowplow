@@ -32,8 +32,8 @@ public class SnowplowClient: ISnowplowClient
 
     public async Task RegisterAsset(ISnowflakeAsset asset, Stack<ISnowflakeAsset> queue)
     {
-        queue.Push(asset);
         await _CreateAsset(asset);
+        queue.Push(asset);
     }
 
     public async Task DeleteAssets(Stack<ISnowflakeAsset> queue)
