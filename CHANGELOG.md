@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/Tsanton/delete-me-snowplow/compare/0.2.2...0.2.3) (2023-03-09)
+
+
+### Bug Fixes
+
+* composite primary key issue ([1a47235](https://github.com/Tsanton/delete-me-snowplow/commit/1a472359b6c09d7868091af3c5792f4c5459ccae))
+
 ## [0.2.2](https://github.com/Tsanton/delete-me-snowplow/compare/0.2.1...0.2.2) (2023-03-09)
 
 
