@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/Tsanton/delete-me-snowplow/compare/0.2.1...0.2.2) (2023-03-09)
+
+
+### Bug Fixes
+
+* register assets queueing order ([5398f5d](https://github.com/Tsanton/delete-me-snowplow/commit/5398f5d08258b7132bf33a70154622bffcccdc44))
+
 ## [0.2.1](https://github.com/Tsanton/delete-me-snowplow/compare/0.2.0...0.2.1) (2023-03-09)
 
 
