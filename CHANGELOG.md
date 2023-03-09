@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.10...0.2.0) (2023-03-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* breaking change in previous commit
+
+### Features
+
+* breaking change in previous commit ([aaf1819](https://github.com/Tsanton/delete-me-snowplow/commit/aaf18198d8651ebb710a63ba0abcc69c7bef42af))
+* support for snowflake principals as object owners ([239621f](https://github.com/Tsanton/delete-me-snowplow/commit/239621fbb61434ebc37ee894e49d857142cd0ae8))
+
 ## [0.1.10](https://github.com/Tsanton/delete-me-snowplow/compare/0.1.9...0.1.10) (2023-03-08)
 
 
