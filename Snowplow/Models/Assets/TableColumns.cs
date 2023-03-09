@@ -77,7 +77,6 @@ public class Varchar: ISnowflakeColumn
     {
         var sb = new StringBuilder();
         sb.Append(Name).Append(' ').Append("VARCHAR").Append($"({Length})");
-        if (PrimaryKey) sb.Append(' ').Append($"PRIMARY KEY");
         if (Nullable == false) sb.Append(' ').Append($"NOT NULL");
         if (Unique) sb.Append(' ').Append($"UNIQUE");
         if (DefaultValue is not null) sb.Append(' ').Append($"DEFAULT '{DefaultValue}'");
@@ -107,7 +106,6 @@ public class Number: ISnowflakeColumn
     {
         var sb = new StringBuilder();
         sb.Append(Name).Append(' ').Append("NUMBER").Append($"({Precision},{Scale})");
-        if (PrimaryKey) sb.Append(' ').Append($"PRIMARY KEY");
         if (Nullable == false) sb.Append(' ').Append($"NOT NULL");
         if (Unique) sb.Append(' ').Append($"UNIQUE");
         if (DefaultValue is not null) sb.Append(' ').Append($"DEFAULT {DefaultValue}");
@@ -135,7 +133,6 @@ public class Bool: ISnowflakeColumn
     {
         var sb = new StringBuilder();
         sb.Append(Name).Append(' ').Append("BOOLEAN");
-        if (PrimaryKey) sb.Append(' ').Append($"PRIMARY KEY");
         if (Nullable == false) sb.Append(' ').Append($"NOT NULL");
         if (Unique) sb.Append(' ').Append($"UNIQUE");
         if (DefaultValue is not null) sb.Append(' ').Append($"DEFAULT {DefaultValue.Value}"); ;
@@ -161,7 +158,6 @@ public class Date: ISnowflakeColumn
     {
         var sb = new StringBuilder();
         sb.Append(Name).Append(' ').Append($"DATE");
-        if (PrimaryKey) sb.Append(' ').Append($"PRIMARY KEY");
         if (Nullable == false) sb.Append(' ').Append($"NOT NULL");
         if (Unique) sb.Append(' ').Append($"UNIQUE");
         if (DefaultValue is not null) sb.Append(' ').Append($"DEFAULT '{DefaultValue}'"); ;
@@ -188,7 +184,6 @@ public class Time: ISnowflakeColumn
     {
         var sb = new StringBuilder();
         sb.Append(Name).Append(' ').Append($"TIME").Append($"({Precision})");
-        if (PrimaryKey) sb.Append(' ').Append($"PRIMARY KEY");
         if (Nullable == false) sb.Append(' ').Append($"NOT NULL");
         if (Unique) sb.Append(' ').Append($"UNIQUE");
         if (DefaultValue is not null) sb.Append(' ').Append($"DEFAULT '{DefaultValue}'"); ;
@@ -215,7 +210,6 @@ public class Timestamp: ISnowflakeColumn
     {
         var sb = new StringBuilder();
         sb.Append(Name).Append(' ').Append(TimestampType.GetEnumJsonAttributeValue()).Append($"({Precision})");
-        if (PrimaryKey) sb.Append(' ').Append($"PRIMARY KEY");
         if (Nullable == false) sb.Append(' ').Append($"NOT NULL");
         if (Unique) sb.Append(' ').Append($"UNIQUE");
         if (DefaultValue is not null) sb.Append(' ').Append($"DEFAULT '{DefaultValue}'"); ;
@@ -241,7 +235,6 @@ public class Variant: ISnowflakeColumn
     {
         var sb = new StringBuilder();
         sb.Append(Name).Append(' ').Append("VARIANT");
-        if (PrimaryKey) sb.Append(' ').Append($"PRIMARY KEY");
         if (Nullable == false) sb.Append(' ').Append($"NOT NULL");
         if (Unique) sb.Append(' ').Append($"UNIQUE");
         if (DefaultValue is not null) sb.Append(' ').Append($"DEFAULT '{DefaultValue}'");

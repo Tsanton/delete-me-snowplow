@@ -1,3 +1,4 @@
+using System.Text;
 using Microsoft.VisualBasic;
 
 namespace Snowplow.Models.Assets;
@@ -16,8 +17,20 @@ public class Table:ISnowflakeAsset
     
     public string GetCreateStatement()
     {
-        var columns = $"(\n{string.Join(",\n", Columns!.Select(x => x.GetDefinition()))}\n)";
-        return $"CREATE TABLE {DatabaseName}.{SchemaName}.{TableName} {columns}";
+        var sb = new StringBuilder();
+        var columnDefinitions = new List<string>();
+        var primaryKeys = new List<string>();
+        sb.AppendLine($"CREATE TABLE {DatabaseName}.{SchemaName}.{TableName} (");
+        foreach (var c in Columns!)
+        {
+            columnDefinitions.Add(c.GetDefinition());
+            if (c.PrimaryKey) primaryKeys.Add(c.Name);
+        }
+        if (primaryKeys.Count > 0) sb.Append(string.Join(",\n", columnDefinitions)); else sb.AppendLine(string.Join(",\n", columnDefinitions));
+        if (primaryKeys.Count > 0) sb.AppendLine(",").AppendLine($"PRIMARY KEY({string.Join(", ", primaryKeys)})");
+        sb.Append(')');  
+        var test = sb.ToString();
+        return test;
     }
 
     public string GetDeleteStatement()
