@@ -16,7 +16,7 @@ public class Table:ISnowflakeAsset
     
     public string GetCreateStatement()
     {
-        var columns = $"(\n{string.Join("\n", Columns!.Select(x => x.GetDefinition()))}\n)";
+        var columns = $"(\n{string.Join(",\n", Columns!.Select(x => x.GetDefinition()))}\n)";
         return $"CREATE TABLE {DatabaseName}.{SchemaName}.{TableName} {columns}";
     }
 
