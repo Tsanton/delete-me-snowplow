@@ -26,7 +26,7 @@ public class RoleTests
         {
             Name = "TEST_SNOWPLOW_ROLE",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         try
         {

@@ -27,14 +27,14 @@ public class DatabaseRoleGrantTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var roleAsset = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_DATABASE_ROLE",
             DatabaseName = dbAsset.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var grant = new Assets.GrantAction
         {
@@ -70,21 +70,21 @@ public class DatabaseRoleGrantTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var schemaAsset = new Assets.Schema
         {
             Database = dbAsset,
             Name = "TEST_SNOWPLOW_SCHEMA",
             Comment = "Integration test schema from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var roleAsset = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_DATABASE_ROLE",
             DatabaseName = dbAsset.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var grant = new Assets.GrantAction
         {

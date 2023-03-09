@@ -46,13 +46,13 @@ public class PrincipalDescendantsTests
         {
             Name = "TEST_SNOWPLOW_CHILD_ROLE",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var parentRole = new Assets.Role
         {
             Name = "TEST_SNOWPLOW_PARENT_ROLE",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var rel = new Assets.RoleInheritance
         {
@@ -89,19 +89,19 @@ public class PrincipalDescendantsTests
         {
             Name = "TEST_SNOWPLOW_CHILD_ROLE_1",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var childRole2 = new Assets.Role
         {
             Name = "TEST_SNOWPLOW_CHILD_ROLE_2",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var parentRole = new Assets.Role
         {
             Name = "TEST_SNOWPLOW_PARENT_ROLE",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var rel1 = new Assets.RoleInheritance
         {
@@ -147,26 +147,26 @@ public class PrincipalDescendantsTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var childRole = new Assets.Role
         {
             Name = "TEST_SNOWPLOW_CHILD_ROLE",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var childDatabaseRole = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_CHILD_DATABASE_ROLE",
             DatabaseName = dbAsset.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var parentRole = new Assets.Role
         {
             Name = "TEST_SNOWPLOW_PARENT_ROLE",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var rel1 = new Assets.RoleInheritance
         {
@@ -212,28 +212,28 @@ public class PrincipalDescendantsTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var childDatabaseRole1 = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_CHILD_DATABASE_ROLE1",
             DatabaseName = dbAsset.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var childDatabaseRole2 = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_CHILD_DATABASE_ROLE2",
             DatabaseName = dbAsset.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var parentDatabaseRole = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_PARENT_DATABASE_ROLE",
             DatabaseName = dbAsset.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var rel1 = new Assets.RoleInheritance
         {

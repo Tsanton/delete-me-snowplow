@@ -28,14 +28,14 @@ public class SchemaTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var schemaAsset = new Assets.Schema
         {
             Database = dbAsset,
             Name = "TEST_SNOWPLOW_SCHEMA",
             Comment = "Integration test schema from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         try
         {

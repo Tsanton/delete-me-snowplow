@@ -28,13 +28,13 @@ public class RoleInheritanceTests
         {
             Name = "TEST_SNOWPLOW_ROLE_1",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var r2 = new Assets.Role
         {
             Name = "TEST_SNOWPLOW_ROLE_2",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         try
         {
@@ -64,13 +64,13 @@ public class RoleInheritanceTests
         {
             Name = "TEST_SNOWPLOW_ROLE_1",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var r2 = new Assets.Role
         {
             Name = "TEST_SNOWPLOW_ROLE_2",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var rel = new Assets.RoleInheritance
         {
@@ -111,7 +111,7 @@ public class RoleInheritanceTests
         {
             Name = "TEST_SNOWPLOW_ROLE_1",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         try
         {
@@ -147,20 +147,20 @@ public class RoleInheritanceTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var r1 = new Assets.Role
         {
             Name = "TEST_SNOWPLOW_ROLE",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var dr1 = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_DATABASE_ROLE",
             DatabaseName = dbAsset.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.DatabaseRole{Name = "USERADMIN"}
         };
         var rel = new Assets.RoleInheritance
         {
@@ -183,20 +183,20 @@ public class RoleInheritanceTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var dr1 = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_DATABASE_ROLE",
             DatabaseName = dbAsset.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var r1 = new Assets.Role
         {
             Name = "TEST_SNOWPLOW_ROLE",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var rel = new Assets.RoleInheritance
         {
@@ -235,27 +235,27 @@ public class RoleInheritanceTests
         {
             Name = "TEST_SNOWPLOW_DB1",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var db2 = new Assets.Database
         {
             Name = "TEST_SNOWPLOW_DB2",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var dr1 = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_DATABASE_ROLE1",
             DatabaseName = db1.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.DatabaseRole{Name = "USERADMIN"}
         };
         var dr2 = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_DATABASE_ROLE2",
             DatabaseName = db2.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.DatabaseRole{Name = "USERADMIN"}
         };
         var rel = new Assets.RoleInheritance
         {
@@ -275,21 +275,21 @@ public class RoleInheritanceTests
         {
             Name = "TEST_SNOWPLOW_DB1",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var dr1 = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_DATABASE_ROLE1",
             DatabaseName = db.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var dr2 = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_DATABASE_ROLE2",
             DatabaseName = db.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var rel = new Assets.RoleInheritance
         {

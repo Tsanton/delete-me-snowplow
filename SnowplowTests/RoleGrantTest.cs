@@ -40,7 +40,7 @@ public class RoleGrantTests
         {
             Name = "TEST_SNOWPLOW_ROLE",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var grant = new Assets.GrantAction
         {
@@ -75,13 +75,13 @@ public class RoleGrantTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var roleAsset = new Assets.Role
         {
             Name = "TEST_SNOWPLOW_ROLE",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var grant = new Assets.GrantAction
         {
@@ -117,20 +117,20 @@ public class RoleGrantTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var schemaAsset = new Assets.Schema
         {
             Database = dbAsset,
             Name = "TEST_SNOWPLOW_SCHEMA",
             Comment = "Integration test schema from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var roleAsset = new Assets.Role
         {
             Name = "TEST_SNOWPLOW_ROLE",
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var grant = new Assets.GrantAction
         {

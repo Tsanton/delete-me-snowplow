@@ -27,14 +27,14 @@ public class DatabaseRoleTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var roleAsset = new Assets.DatabaseRole()
         {
             Name = "TEST_SNOWPLOW_DATABASE_ROLE",
             DatabaseName = dbAsset.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         try
         {
@@ -65,7 +65,7 @@ public class DatabaseRoleTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         try
         {
@@ -99,5 +99,58 @@ public class DatabaseRoleTests
 
         /*Assert*/
         Assert.Null(dbRole);
+    }
+    
+    [Fact]
+    public async Task test_database_role_with_database_role_owner()
+    {
+        /*Arrange*/
+        var dbAsset = new Assets.Database
+        {
+            Name = "TEST_SNOWPLOW_DB",
+            Comment = "Integration test database from the Snowplow test suite",
+            Owner = new Assets.Role{Name = "SYSADMIN"}
+        };
+        var databaseRoleOwner = new Assets.DatabaseRole()
+        {
+            Name = "TEST_SNOWPLOW_DATABASE_OWNER_ROLE",
+            DatabaseName = dbAsset.Name,
+            Comment = "Integration test role from the Snowplow test suite",
+            Owner = new Assets.Role{Name = "USERADMIN"}
+        };
+        var databaseRoleOwned = new Assets.DatabaseRole()
+        {
+            Name = "TEST_SNOWPLOW_DATABASE_OWNED_ROLE",
+            DatabaseName = dbAsset.Name,
+            Comment = "Integration test role from the Snowplow test suite",
+            Owner = databaseRoleOwner
+        };
+        var rel = new Assets.RoleInheritance //Must grant owner role to USERADMIN in order to be able to delete owned role
+        {
+            ChildRole = databaseRoleOwner,
+            ParentPrincipal = new Assets.Role{Name = "USERADMIN"}
+        };
+        try
+        {
+            /*Act*/
+            await _cli.RegisterAsset(dbAsset, _stack);
+            await _cli.RegisterAsset(databaseRoleOwner, _stack);
+            await _cli.RegisterAsset(rel, _stack);
+            await _cli.RegisterAsset(databaseRoleOwned, _stack);
+            var dbRole = await _cli.ShowOne<Entities.DatabaseRole>(new Describables.DatabaseRole
+            {
+                Name = databaseRoleOwned.Name,
+                DatabaseName = dbAsset.Name
+            });
+
+            /*Assert*/
+            Assert.NotNull(dbRole);
+            Assert.Equal(databaseRoleOwned.Name, dbRole!.Name);
+            Assert.Equal(databaseRoleOwner.Name, databaseRoleOwner.Name);
+        }
+        finally
+        {
+            await _cli.DeleteAssets(_stack);
+        }
     }
 }

@@ -91,34 +91,34 @@ public class PrincipalAscendantsTests
         {
             Name = "TEST_SNOWPLOW_DB",
             Comment = "Integration test database from the Snowplow test suite",
-            Owner = "SYSADMIN"
+            Owner = new Assets.Role{Name = "SYSADMIN"}
         };
         var dr1 = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_DB_SYS_ADMIN",
             DatabaseName = db.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var dr2 = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_DB_SCHEMA_RWC",
             DatabaseName = db.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         var dr3 = new Assets.DatabaseRole
         {
             Name = "TEST_SNOWPLOW_DB_SCHEMA_RW",
             DatabaseName = db.Name,
             Comment = "Integration test role from the Snowplow test suite",
-            Owner = "USERADMIN"
+            Owner = new Assets.Role{Name = "USERADMIN"}
         };
         
         var rel1 = new Assets.RoleInheritance
         {
             ChildRole = dr1,
-            ParentPrincipal = new Assets.Role { Name = "SYSADMIN", Comment = "", Owner = "" }
+            ParentPrincipal = new Assets.Role { Name = "SYSADMIN"}
         };
         var rel2 = new Assets.RoleInheritance
         {
